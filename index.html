@@ -17,7 +17,7 @@ body:before{content:"";position:fixed;inset:0;background:linear-gradient(110deg,
 h1{text-align:center;font-weight:400;letter-spacing:.105em;font-size:clamp(28px,5vw,48px);line-height:1.15;margin:0;color:#3d3431}
 .rule{width:68px;height:1px;background:#b37a77;margin:23px auto 30px}.subtitle{text-align:center;font-size:clamp(17px,2.6vw,22px);font-style:italic;color:#75645d;margin:0 0 34px}
 .copy{font-size:clamp(15px,1.8vw,17px);line-height:1.88}.copy p{margin:0 0 19px}.copy strong{color:#573f3c}.quote{margin:26px auto;padding:18px 24px;border-left:2px solid #ba8780;color:#795d58;font-style:italic;font-size:1.05em;line-height:1.75;background:rgba(190,147,137,.08)}
-.closing{margin-top:26px}.signature{margin-top:36px;color:#635650}.signature p{margin:0 0 8px}.signature .name{font-weight:bold;color:#473b38}.music{margin:34px auto 0;max-width:420px;border-top:1px solid var(--line);padding-top:22px;text-align:center;font:14px/1.6 Arial,sans-serif;color:#655852}.music-title{font:italic 18px Georgia,serif;color:#493a38;margin:2px 0 12px}.play{appearance:none;border:1px solid #9c6c69;background:#8b5e5c;color:white;padding:10px 18px;border-radius:2px;cursor:pointer;font:600 12px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.play:hover{background:#704a49}.play:focus-visible{outline:3px solid #c4948d;outline-offset:3px}.player{margin:16px auto 0;aspect-ratio:16/9;width:100%;display:none}.player iframe{width:100%;height:100%;border:0}.note{font-size:11px;color:#877973;margin-top:10px}.footer{text-align:center;color:rgba(255,255,255,.82);font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-top:22px}
+.closing{margin-top:26px}.signature{margin-top:36px;color:#635650}.signature p{margin:0 0 8px}.signature .name{font-weight:bold;color:#473b38}.music{margin:34px auto 0;max-width:420px;border-top:1px solid var(--line);padding-top:22px;text-align:center;font:14px/1.6 Arial,sans-serif;color:#655852}.music-title{font:italic 18px Georgia,serif;color:#493a38;margin:2px 0 12px}.play{appearance:none;border:1px solid #9c6c69;background:#8b5e5c;color:white;padding:10px 18px;border-radius:2px;cursor:pointer;font:600 12px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.play:hover{background:#704a49}.play:focus-visible{outline:3px solid #c4948d;outline-offset:3px}.player{margin:16px auto 0;aspect-ratio:16/9;width:100%;display:none}.player iframe{width:100%;height:100%;border:0}.note{font-size:11px;color:#877973;margin-top:10px}.full-link{display:inline-block;margin-top:5px;color:#805657;text-decoration:underline;text-underline-offset:3px}.footer{text-align:center;color:rgba(255,255,255,.82);font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-top:22px}
 @media(max-width:540px){body{background-position:58% center}.wrap{width:min(100% - 20px,860px);padding:14px 0}.card{padding:38px 26px}.card:before{inset:8px}.copy{line-height:1.78}.quote{padding:14px 17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -41,9 +41,10 @@ h1{text-align:center;font-weight:400;letter-spacing:.105em;font-size:clamp(28px,
 </div>
 <section class="music" aria-label="Music">
 <div>Listen while reading</div><div class="music-title">“cá mơ” — Nguyễn Minh Xuân Ái</div>
-<button class="play" id="play" type="button" aria-expanded="false">Play song</button>
+<button class="play" id="play" type="button" aria-expanded="false">Open music player</button>
 <div class="player" id="player"></div>
-<p class="note">Plays from the artist’s official YouTube release.</p>
+<p class="note">Spotify plays a preview here. Open Spotify for the full track.</p>
+<a class="full-link" href="https://open.spotify.com/track/2pQPThAUSfpGN6DoON92Vr" target="_blank" rel="noopener noreferrer">Open full track on Spotify</a>
 </section>
 </article>
 <p class="footer">With gratitude · 2026</p>
@@ -54,13 +55,13 @@ button.addEventListener('click',()=>{
  const player=document.getElementById('player');
  if(!player.querySelector('iframe')){
   const frame=document.createElement('iframe');
-  frame.src='https://www.youtube-nocookie.com/embed/_B66mPfHjXU?autoplay=1&rel=0';
-  frame.title='cá mơ — Nguyễn Minh Xuân Ái';
-  frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  frame.referrerPolicy='strict-origin-when-cross-origin';frame.allowFullscreen=true;
+  frame.src='https://open.spotify.com/embed/track/2pQPThAUSfpGN6DoON92Vr?utm_source=generator';
+  frame.title='cá mơ — Nguyễn Minh Xuân Ái, Hoan Le (Spotify preview)';
+  frame.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+  frame.loading='lazy';
   player.appendChild(frame);
  }
- player.style.display='block';button.setAttribute('aria-expanded','true');button.textContent='Song player opened';
+ player.style.display='block';button.setAttribute('aria-expanded','true');button.textContent='Music player opened';
 });
 </script>
 </body>
