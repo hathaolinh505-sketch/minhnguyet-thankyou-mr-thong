@@ -43,8 +43,8 @@ h1{text-align:center;font-weight:400;letter-spacing:.105em;font-size:clamp(28px,
 <div>Listen while reading</div><div class="music-title">“cá mơ” — Nguyễn Minh Xuân Ái</div>
 <button class="play" id="play" type="button" aria-expanded="false">Open music player</button>
 <div class="player" id="player"></div>
-<p class="note">Spotify plays a preview here. Open Spotify for the full track.</p>
-<a class="full-link" href="https://open.spotify.com/track/2pQPThAUSfpGN6DoON92Vr" target="_blank" rel="noopener noreferrer">Open full track on Spotify</a>
+<p class="note">Official visualizer · Full song (3:50). Press play in the video to listen.</p>
+<a class="full-link" href="https://www.youtube.com/watch?v=NBfkLBiXXBo" target="_blank" rel="noopener noreferrer">Open the official visualizer on YouTube</a>
 </section>
 </article>
 <p class="footer">With gratitude · 2026</p>
@@ -55,8 +55,8 @@ button.addEventListener('click',()=>{
  const player=document.getElementById('player');
  if(!player.querySelector('iframe')){
   const frame=document.createElement('iframe');
-  frame.src='https://open.spotify.com/embed/track/2pQPThAUSfpGN6DoON92Vr?utm_source=generator';
-  frame.title='cá mơ — Nguyễn Minh Xuân Ái, Hoan Le (Spotify preview)';
+  frame.src='https://www.youtube-nocookie.com/embed/NBfkLBiXXBo?rel=0';
+  frame.title='cá mơ — Nguyễn Minh Xuân Ái, Hoan Le (Official Visualizer, full song)';
   frame.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
   frame.loading='lazy';
   player.appendChild(frame);
@@ -66,3 +66,4 @@ button.addEventListener('click',()=>{
 </script>
 </body>
 </html>
+
